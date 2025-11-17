@@ -1,12 +1,14 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 
 app.use(express.json());
 
+// 1) SERVIR PAINEL HTML ESTÁTICO
+app.use(express.static(path.join(__dirname, "public")));
+
 // Jogadores online
 let players = {};
-
-// Comandos enviados pelo painel
 let commands = [];
 
 /* --- ROBLOX ENVIA ENTRADA / SAÍDA --- */
@@ -41,9 +43,9 @@ app.get("/commands", (req, res) => {
     res.json(result);
 });
 
-/* --- TESTE --- */
-app.get("/", (req, res) => {
-    res.send("API do Painel Roblox funcionando!");
+/* --- SE A ROTA NÃO EXISTE, DEVOLVE O INDEX.HTML (SPA fallback) --- */
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.listen(10000, () => {
