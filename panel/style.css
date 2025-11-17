@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    background: #111;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background: #181818;
+    padding: 20px;
+    border-right: 1px solid #222;
+}
+.sidebar h2 {
+    color: #0f9dff;
+    font-weight: 300;
+}
+.menu-item {
+    margin: 15px 0;
+    opacity: .8;
+    cursor: pointer;
+}
+.menu-item:hover, .active {
+    color: #0f9dff;
+    opacity: 1;
+}
+
+/* Content */
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+.topbar {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Search */
+.search {
+    width: 100%;
+    padding: 12px;
+    background: #1c1c1c;
+    border-radius: 6px;
+    color: #fff;
+    border: 1px solid #333;
+    outline: none;
+}
+
+/* Player grid */
+.players {
+    margin-top: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+/* Card */
+.player {
+    background: #1b1b1b;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #222;
+    transition: .2s;
+}
+.player:hover {
+    transform: translateY(-4px);
+}
+
+.name {
+    font-size: 18px;
+    color: #0f9dff;
+}
+.id {
+    font-size: 12px;
+    opacity: .7;
+}
+
+/* Buttons */
+.btn {
+    width: 48%;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+.kick {
+    background: #ff4444;
+}
+.ban {
+    background: #ff0066;
+}
+
+.btn:hover {
+    opacity: .8;
+}
